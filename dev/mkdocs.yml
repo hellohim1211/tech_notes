@@ -1,56 +1,40 @@
-# 基本設定
 site_name: Tech Notes
-site_url: https://example.com/
 
-# 主題設定
 theme:
   name: material
 
-  # 調色板設定
   palette:
-    # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    # Palette toggle for light mode
+    - scheme: default
       primary: yellow
       accent: orange
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    # Palette toggle for dark mode
+    - scheme: slate
       primary: yellow
       accent: orange
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
 
-  # 功能設定
+
   features:
     - navigation.tabs
     - navigation.sections
     - navigation.top
-    - navigation.tracking
-    - navigation.expand
-    - navigation.indexes
-    - navigation.instant
     - search.suggest
     - search.highlight
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
-    - toc.follow
-    - toc.integrate
+    - navigation.expand
+    - navigation.indexes
 
-  # 預設語言設定
-  language: zh_TW
-
-# Markdown 擴展
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
@@ -64,55 +48,40 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - toc:
-      permalink: true
 
-# 插件設定
-plugins:
-  - search:
-      lang:
-        - en
-        - zh
-      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-  - i18n:
-      default_language: en
-      languages:
-        - locale: en
-          name: English
-#          default: true
-          build: true
-        - locale: zh
-          name: 繁體中文
-          build: true
-          nav_translations:
-            Home: 首頁
-            Software Installation: 軟體安裝
-            Misc: 其他
-
-# 導航設定
-nav:
-  - Home:
-    - index.md  # 會自動對應到 en/index.md 和 zh_TW/index.md
-  - Software Installation:
-    - code.md
-    - installation.md
-  - Misc:
-    - mkdocs-i18n.md
-
-# 額外設定
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/squidfunk/mkdocs-material
-      name: GitHub Repository
-  generator: false  # 移除 Made with Material for MkDocs
-  analytics:
-    provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
-  alternate:
-    - name: English
-      link: /en/
-      lang: en
-    - name: 繁體中文
-      link: /zh_TW/
-      lang: zh_TW
+  generator: false
+
+# nav template for 3 level
+#nav:
+#- Home: index.md
+#- Software Installation:
+#  - Overview: software/overview.md
+#  - VS Code: software/vscode.md
+#- Python:
+#  - Getting Started:
+#    - Installation: python/getting-started/installation.md
+#    - Basic Syntax: python/getting-started/syntax.md
+#  - Advanced Topics:
+#    - Decorators: python/advanced/decorators.md
+#    - Generators: python/advanced/generators.md
+#- AI:
+#  - Machine Learning:
+#    - Basics: ai/ml/basics.md
+#    - Neural Networks: ai/ml/neural-networks.md
+#  - Deep Learning:
+#    - CNN: ai/dl/cnn.md
+#    - RNN: ai/dl/rnn.md
+
+nav:
+- Home: index.md
+- Software:
+  - MkDocs: software/mkdocs.md
+  - Docker: software/docker.md
+- Python:
+  - Python Overview: python/overview.md
+  - Python 概覽: python/overview_zh.md
+  - FastAPI: python/fastapi.md

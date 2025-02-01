@@ -1,0 +1,9 @@
+nav:
+- Home: index.md
+- Software:
+  - MkDocs: software/mkdocs.md
+  - Docker: software/docker.md
+- Python:
+  - Python Overview: python/overview.md
+  - Python 概覽: python/overview_zh.md
+  - FastAPI: python/fastapi.md
