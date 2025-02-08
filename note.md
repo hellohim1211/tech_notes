@@ -1,11 +1,14 @@
-install
+### install
 pip3 install mkdocs-material
 
-create new doc
+### create new doc
 mkdocs new doc-1
 
-preview
+### preview
 mkdocs serve
 
-build site
+### build site
 mkdocs build
+
+### deploy to github page
+mkdocs gh-deploy
