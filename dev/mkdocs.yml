@@ -82,6 +82,7 @@ nav:
   - MkDocs: software/mkdocs.md
   - Docker: software/docker.md
   - Docker 安裝指南 - Ubuntu: software/docker-ubuntu-install-zh.md
+  - Installing Ollama with Docker: software/ollama-docker-installation-guide.md
 - Python:
   - Python Overview: python/overview.md
   - Python 概覽: python/overview-zh.md
