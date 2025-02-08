@@ -87,4 +87,5 @@ nav:
   - Python 概覽: python/overview-zh.md
   - FastAPI: python/fastapi.md
 - AI:
-  - Installing Ollama with Docker: software/ollama-docker-installation-guide.md
+  - Ollama: ai/ollama-docker-installation-guide.md
+  - Open WebUI: ai/open-webui-introduction-installation.md
