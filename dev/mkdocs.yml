@@ -81,7 +81,8 @@ nav:
 - Software:
   - MkDocs: software/mkdocs.md
   - Docker: software/docker.md
+  - Docker 安裝指南 - Ubuntu: software/docker-ubuntu-install.md
 - Python:
   - Python Overview: python/overview.md
-  - Python 概覽: python/overview_zh.md
+  - Python 概覽: python/overview-zh.md
   - FastAPI: python/fastapi.md
