@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../docker/">
+        <link rel="prev" href="../docker-ubuntu-install-zh/">
       
       
-        <link rel="next" href="../ollama-docker-installation-guide/">
+        <link rel="next" href="../../python/overview/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Docker 安裝指南 - Ubuntu - Tech Notes</title>
+        <title>Installing Ollama with Docker - Tech Notes</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker-ubuntu" class="md-skip">
+        <a href="#installing-ollama-with-docker" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker 安裝指南 - Ubuntu
+              Installing Ollama with Docker
             
           </span>
         </div>
@@ -411,6 +411,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-ubuntu-install-zh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker 安裝指南 - Ubuntu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -427,7 +448,7 @@
           
   
   <span class="md-ellipsis">
-    Docker 安裝指南 - Ubuntu
+    Installing Ollama with Docker
   </span>
   
 
@@ -438,7 +459,7 @@
         
   
   <span class="md-ellipsis">
-    Docker 安裝指南 - Ubuntu
+    Installing Ollama with Docker
   </span>
   
 
@@ -460,82 +481,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      系統需求
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-engine" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      安裝 Docker Engine
+      Prerequisites
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="安裝 Docker Engine">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Docker Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Docker Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-pull-the-official-image" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 更新系統套件
+      1. Pull the Official Image
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-run-ollama-container" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 安裝必要的依賴套件
+      2. Run Ollama Container
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-docker-gpg" class="md-nav__link">
+  <a href="#understanding-the-docker-run-command" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 添加 Docker 官方 GPG 密鑰
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 設置 Docker 倉庫
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-docker-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 安裝 Docker Engine
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 驗證安裝
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. 將當前用戶添加到 docker 群組（可選但推薦）
+      Understanding the Docker Run Command
     </span>
   </a>
   
@@ -547,37 +541,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
+  <a href="#using-docker-compose-recommended" class="md-nav__link">
     <span class="md-ellipsis">
-      安裝 Docker Compose
+      Using Docker Compose (Recommended)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="安裝 Docker Compose">
+    <nav class="md-nav" aria-label="Using Docker Compose (Recommended)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-docker-compose" class="md-nav__link">
+  <a href="#1-create-docker-compose-file" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 下載最新版本的 Docker Compose
+      1. Create Docker Compose File
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
+  <a href="#2-start-ollama-with-docker-compose" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 設置執行權限
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 驗證安裝
+      2. Start Ollama with Docker Compose
     </span>
   </a>
   
@@ -589,37 +574,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#verifying-the-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      常見問題排解
+      Verifying the Installation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="常見問題排解">
+    <nav class="md-nav" aria-label="Verifying the Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
+  <a href="#1-check-container-status" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker 服務無法啟動
+      1. Check Container Status
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker_1" class="md-nav__link">
+  <a href="#2-test-ollama-api" class="md-nav__link">
     <span class="md-ellipsis">
-      查看 Docker 服務狀態
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      移除舊版本 Docker
+      2. Test Ollama API
     </span>
   </a>
   
@@ -631,46 +607,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#running-your-first-model" class="md-nav__link">
     <span class="md-ellipsis">
-      基本使用範例
+      Running Your First Model
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="基本使用範例">
+    <nav class="md-nav" aria-label="Running Your First Model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-docker" class="md-nav__link">
+  <a href="#1-pull-a-model" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 檢查 Docker 版本
+      1. Pull a Model
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-docker" class="md-nav__link">
+  <a href="#2-run-a-basic-query" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 檢查 Docker 系統信息
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 列出所有運行中的容器
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 列出所有容器（包括已停止的）
+      2. Run a Basic Query
     </span>
   </a>
   
@@ -682,9 +640,93 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#common-operations" class="md-nav__link">
     <span class="md-ellipsis">
-      參考資料
+      Common Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stopping-the-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopping the Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting the Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing Logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Solutions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
     </span>
   </a>
   
@@ -694,27 +736,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ollama-docker-installation-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Installing Ollama with Docker
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -874,82 +895,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      系統需求
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-engine" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      安裝 Docker Engine
+      Prerequisites
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="安裝 Docker Engine">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Docker Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Docker Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-pull-the-official-image" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 更新系統套件
+      1. Pull the Official Image
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-run-ollama-container" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 安裝必要的依賴套件
+      2. Run Ollama Container
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-docker-gpg" class="md-nav__link">
+  <a href="#understanding-the-docker-run-command" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 添加 Docker 官方 GPG 密鑰
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 設置 Docker 倉庫
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-docker-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 安裝 Docker Engine
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 驗證安裝
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. 將當前用戶添加到 docker 群組（可選但推薦）
+      Understanding the Docker Run Command
     </span>
   </a>
   
@@ -961,37 +955,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
+  <a href="#using-docker-compose-recommended" class="md-nav__link">
     <span class="md-ellipsis">
-      安裝 Docker Compose
+      Using Docker Compose (Recommended)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="安裝 Docker Compose">
+    <nav class="md-nav" aria-label="Using Docker Compose (Recommended)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-docker-compose" class="md-nav__link">
+  <a href="#1-create-docker-compose-file" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 下載最新版本的 Docker Compose
+      1. Create Docker Compose File
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
+  <a href="#2-start-ollama-with-docker-compose" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 設置執行權限
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 驗證安裝
+      2. Start Ollama with Docker Compose
     </span>
   </a>
   
@@ -1003,37 +988,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#verifying-the-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      常見問題排解
+      Verifying the Installation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="常見問題排解">
+    <nav class="md-nav" aria-label="Verifying the Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
+  <a href="#1-check-container-status" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker 服務無法啟動
+      1. Check Container Status
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docker_1" class="md-nav__link">
+  <a href="#2-test-ollama-api" class="md-nav__link">
     <span class="md-ellipsis">
-      查看 Docker 服務狀態
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      移除舊版本 Docker
+      2. Test Ollama API
     </span>
   </a>
   
@@ -1045,46 +1021,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#running-your-first-model" class="md-nav__link">
     <span class="md-ellipsis">
-      基本使用範例
+      Running Your First Model
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="基本使用範例">
+    <nav class="md-nav" aria-label="Running Your First Model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-docker" class="md-nav__link">
+  <a href="#1-pull-a-model" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 檢查 Docker 版本
+      1. Pull a Model
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-docker" class="md-nav__link">
+  <a href="#2-run-a-basic-query" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 檢查 Docker 系統信息
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 列出所有運行中的容器
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 列出所有容器（包括已停止的）
+      2. Run a Basic Query
     </span>
   </a>
   
@@ -1096,9 +1054,93 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#common-operations" class="md-nav__link">
     <span class="md-ellipsis">
-      參考資料
+      Common Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stopping-the-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopping the Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting the Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing Logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Solutions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
     </span>
   </a>
   
@@ -1119,90 +1161,121 @@
                   
 
 
-<h1 id="docker-ubuntu">Docker 安裝指南 - Ubuntu</h1>
-<p>本文檔將指導您如何在 Ubuntu 系統上安裝 Docker Engine 和 Docker Compose。</p>
-<h2 id="_1">系統需求</h2>
+<h1 id="installing-ollama-with-docker">Installing Ollama with Docker</h1>
+<h2 id="overview">Overview</h2>
+<p>This guide explains how to install and run Ollama using Docker. Ollama is an open-source platform that allows you to run large language models locally, making it ideal for developers who need offline AI capabilities.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before proceeding with the installation, ensure you have:</p>
 <ul>
-<li>Ubuntu 版本：20.04 LTS 或更新版本</li>
-<li>具有 sudo 權限的用戶帳戶</li>
-<li>終端機訪問權限</li>
+<li>Docker installed on your system</li>
+<li>At least 8GB RAM (recommended)</li>
+<li>Sufficient storage space (varies by model)</li>
+<li>Docker Compose (optional, but recommended)</li>
 </ul>
-<h2 id="docker-engine">安裝 Docker Engine</h2>
-<h3 id="1">1. 更新系統套件</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<h2 id="basic-docker-installation">Basic Docker Installation</h2>
+<h3 id="1-pull-the-official-image">1. Pull the Official Image</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ollama/ollama
 </code></pre></div>
-<h3 id="2">2. 安裝必要的依賴套件</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>apt-transport-https<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span>ca-certificates<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>curl<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span>gnupg<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span>lsb-release
+<h3 id="2-run-ollama-container">2. Run Ollama Container</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--name<span class="w"> </span>ollama<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">11434</span>:11434<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>-v<span class="w"> </span>ollama:/root/.ollama<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>ollama/ollama
 </code></pre></div>
-<h3 id="3-docker-gpg">3. 添加 Docker 官方 GPG 密鑰</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/docker-archive-keyring.gpg
-</code></pre></div>
-<h3 id="4-docker">4. 設置 Docker 倉庫</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">echo</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s2">  </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> stable&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
-</code></pre></div>
-<h3 id="5-docker-engine">5. 安裝 Docker Engine</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io
-</code></pre></div>
-<h3 id="6">6. 驗證安裝</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>hello-world
-</code></pre></div>
-<h3 id="7-docker">7. 將當前用戶添加到 docker 群組（可選但推薦）</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
-</code></pre></div>
-<blockquote>
-<p>注意：添加用戶到 docker 群組後需要重新登入才能生效</p>
-</blockquote>
-<h2 id="docker-compose">安裝 Docker Compose</h2>
-<h3 id="1-docker-compose">1. 下載最新版本的 Docker Compose</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span><span class="s2">&quot;https://github.com/docker/compose/releases/latest/download/docker-compose-</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span>/usr/local/bin/docker-compose
-</code></pre></div>
-<h3 id="2_1">2. 設置執行權限</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/usr/local/bin/docker-compose
-</code></pre></div>
-<h3 id="3">3. 驗證安裝</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker-compose<span class="w"> </span>--version
-</code></pre></div>
-<h2 id="_2">常見問題排解</h2>
-<h3 id="docker">Docker 服務無法啟動</h3>
-<p>如果 Docker 服務無法啟動，可以嘗試以下命令：
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>docker
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
-</code></pre></div></p>
-<h3 id="docker_1">查看 Docker 服務狀態</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>docker
-</code></pre></div>
-<h3 id="docker_2">移除舊版本 Docker</h3>
-<p>如果需要移除舊版本的 Docker：
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>docker<span class="w"> </span>docker-engine<span class="w"> </span>docker.io<span class="w"> </span>containerd<span class="w"> </span>runc
-</code></pre></div></p>
-<h2 id="_3">基本使用範例</h2>
-<h3 id="1-docker">1. 檢查 Docker 版本</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span>--version
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>docker-compose<span class="w"> </span>--version
-</code></pre></div>
-<h3 id="2-docker">2. 檢查 Docker 系統信息</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>info
-</code></pre></div>
-<h3 id="3_1">3. 列出所有運行中的容器</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker<span class="w"> </span>ps
-</code></pre></div>
-<h3 id="4">4. 列出所有容器（包括已停止的）</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a
-</code></pre></div>
-<h2 id="_4">參考資料</h2>
+<h3 id="understanding-the-docker-run-command">Understanding the Docker Run Command</h3>
 <ul>
-<li><a href="https://docs.docker.com/">Docker 官方文檔</a></li>
-<li><a href="https://docs.docker.com/compose/">Docker Compose 官方文檔</a></li>
-<li><a href="https://ubuntu.com/server/docs">Ubuntu 官方文檔</a></li>
+<li><code>-d</code>: Runs the container in detached mode</li>
+<li><code>--name ollama</code>: Names the container "ollama"</li>
+<li><code>-p 11434:11434</code>: Maps the container's port to host port</li>
+<li><code>-v ollama:/root/.ollama</code>: Creates a volume for persistent storage</li>
+</ul>
+<h2 id="using-docker-compose-recommended">Using Docker Compose (Recommended)</h2>
+<h3 id="1-create-docker-compose-file">1. Create Docker Compose File</h3>
+<p>Create a <code>docker-compose.yml</code> file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">ollama</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama/ollama:latest</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;11434:11434&quot;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama:/root/.ollama</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="nt">ollama</span><span class="p">:</span>
+</code></pre></div>
+<h3 id="2-start-ollama-with-docker-compose">2. Start Ollama with Docker Compose</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<h2 id="verifying-the-installation">Verifying the Installation</h2>
+<h3 id="1-check-container-status">1. Check Container Status</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>ps
+</code></pre></div>
+<h3 id="2-test-ollama-api">2. Test Ollama API</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>http://localhost:11434/api/tags
+</code></pre></div>
+<h2 id="running-your-first-model">Running Your First Model</h2>
+<h3 id="1-pull-a-model">1. Pull a Model</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ollama<span class="w"> </span>ollama<span class="w"> </span>pull<span class="w"> </span>llama2
+</code></pre></div>
+<h3 id="2-run-a-basic-query">2. Run a Basic Query</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ollama<span class="w"> </span>ollama<span class="w"> </span>run<span class="w"> </span>llama2<span class="w"> </span><span class="s2">&quot;Hello, how are you?&quot;</span>
+</code></pre></div>
+<h2 id="common-operations">Common Operations</h2>
+<h3 id="stopping-the-container">Stopping the Container</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>stop<span class="w"> </span>ollama
+</code></pre></div>
+<h3 id="starting-the-container">Starting the Container</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w"> </span>start<span class="w"> </span>ollama
+</code></pre></div>
+<h3 id="viewing-logs">Viewing Logs</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>ollama
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues-and-solutions">Common Issues and Solutions</h3>
+<ol>
+<li><strong>Port Conflict</strong></li>
+<li>Error: "port 11434 already in use"</li>
+<li>
+<p>Solution: Change the port mapping or stop the conflicting service</p>
+</li>
+<li>
+<p><strong>Insufficient Memory</strong></p>
+</li>
+<li>Error: Container exits immediately</li>
+<li>
+<p>Solution: Increase Docker memory allocation in Docker Desktop settings</p>
+</li>
+<li>
+<p><strong>Permission Issues</strong></p>
+</li>
+<li>Error: "permission denied" for volume</li>
+<li>Solution: Check Docker volume permissions and ownership</li>
+</ol>
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li>Always use version tags for production deployments</li>
+<li>Implement health checks for container monitoring</li>
+<li>Use Docker volumes for persistent storage</li>
+<li>Regular backup of the ollama volume</li>
+<li>Monitor resource usage</li>
+</ol>
+<h2 id="security-considerations">Security Considerations</h2>
+<ol>
+<li>Avoid running as root inside the container</li>
+<li>Restrict network access if running in production</li>
+<li>Regularly update the Ollama image</li>
+<li>Use Docker secrets for sensitive configurations</li>
+</ol>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://ollama.ai/docs">Official Ollama Documentation</a></li>
+<li><a href="https://github.com/ollama/ollama">Ollama GitHub Repository</a></li>
+<li><a href="https://docs.docker.com/">Docker Documentation</a></li>
 </ul>
 
 
